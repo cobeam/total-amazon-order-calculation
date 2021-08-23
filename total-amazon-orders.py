@@ -1,6 +1,6 @@
 import pandas as pd
 
-#Ask for name of file, should be located in same folder as amazon-orders.py
+#Ask for name of file, should be located in same folder as total-amazon-orders.py
 filename = input("What is the CSV file name? ")
 
 #Open CSV and replace all NaN values with 0
