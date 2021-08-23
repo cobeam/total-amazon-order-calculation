@@ -4,9 +4,12 @@ import pandas as pd
 filename = input("What is the CSV file name? ")
 
 #Open CSV and replace all NaN values with 0
-df = pd.read_csv(filename)
-df = df.fillna(0)
-
+try:
+    df = pd.read_csv(filename)
+    df = df.fillna(0)
+except:
+    print("\n\nUnable to locate file. Please make sure it is in the same directroy as this python script.")
+    exit()
 
 #Change values in CSV to something python can read
 df["Total Charged"] = df["Total Charged"].str.replace('$', '', regex=True).astype(float)
